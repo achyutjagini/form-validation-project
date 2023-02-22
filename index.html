@@ -6,8 +6,8 @@
 
     for (let i = 0; i < x.length; i++) {
       if (x[i].value.length < 3 || x[i].value.length > 16) {
-        s = document.getElementsByClassName(x[i].value);
-        s.innerText = 'error';
+        s = document.getElementsByClassName('fname');
+        s.innerHTML= 'error';
         alert('D');
         return false;
       }
@@ -20,7 +20,7 @@
   <p>First Name</p>
   <br />
   <input type="text" name="fname" class="names" />
-  <div class="fname"></div>
+  <p class="fname"></div>
 
   <p>Last Name</p>
   <br />
