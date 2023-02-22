@@ -1,3 +1,11 @@
-h1, h2 {
+h3 {
   font-family: Lato;
+  font-style: italic;
+  font-weight: 300;
+  background: rgba(131, 31, 31, 0.615);
+}
+
+.names {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: oblique;
 }

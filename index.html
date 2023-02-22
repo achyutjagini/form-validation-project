@@ -14,8 +14,8 @@
       if (
         x[i].value.length < 3 ||
         x[i].value.length > 16 ||
-        isAlphanumeric(x[i]) == false)
-        {
+        isAlphanumeric(x[i]) == false
+      ) {
         attr = x[i].getAttribute('name');
         console.log(attr);
         let s = document.querySelector(`.${attr}`);
@@ -31,10 +31,11 @@
       }
     }
 
-   // const emailInput = document.querySelector('input[type="email"]');
+    const emailInput = document.querySelector('input[type="email"]');
     // Create a new paragraph element
     const message = document.createElement('p');
-   // message.textContent = 'Please enter a valid email address.';
+    message.textContent = 'Please enter a valid email address.';
+    emailInput.insertAdjacentElement('afterend', message);
 
     return valid;
   }
