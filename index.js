@@ -11,9 +11,8 @@ function validate() {
 
   for (let i = 0; i < x.length; i++) {
     if (x[i].value.length < 3 || x[i].value.length > 16) {
-      let s = document.createElement('p');
-      s.textContent = 'invalid input';
-      x[i].appendChild(s);
+      s = document.getElementsByClassName(x[i].value);
+      s.innerText = 'error';
       alert('D');
       return false;
     }
