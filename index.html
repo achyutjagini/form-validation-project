@@ -1,26 +1,29 @@
 <div id="app"></div>
 <script>
   function validate() {
-    let s = document.createElement('p');
+    let s = document.querySelector('.fname');
     let x = document.getElementsByClassName('names');
+    let valid = true;
 
     for (let i = 0; i < x.length; i++) {
       if (x[i].value.length < 3 || x[i].value.length > 16) {
-        s = document.getElementByClassName('fname');
-        s.innerHTML= 'error';
-        alert('D');
-        return false;
+        s.innerHTML = 'error';
+        alert('Validation error!');
+        valid = false;
       }
     }
+
+    return valid;
   }
 </script>
+
 <h3><center>Validating web forms</center></h3>
 
 <form name="myForm" action="" onsubmit="return validate()">
   <p>First Name</p>
   <br />
   <input type="text" name="fname" class="names" />
-  <p class="fname"></div>
+  <p class="fname"></p>
 
   <p>Last Name</p>
   <br />
