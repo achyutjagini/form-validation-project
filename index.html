@@ -1,7 +1,7 @@
 <div id="app"></div>
 <script>
   function validate() {
-    let s = document.querySelector('.fname');
+    //let s = document.querySelector('.fname');
     //selects p element
 
     let x = document.getElementsByClassName('names');
@@ -9,7 +9,16 @@
 
     for (let i = 0; i < x.length; i++) {
       if (x[i].value.length < 3 || x[i].value.length > 16) {
-        s.innerHTML = 'error';
+        attr = x[i].getAttribute('name');
+        console.log(attr);
+        let s = document.querySelector(`.${attr}`);
+        if (attr == 'fname')
+          s.innerHTML =
+            'first name must be alphanumeric and contain 3-16 characters';
+        else
+          s.innerHTML =
+            'last name must be alphanumeric and contain 3-16 characters';
+
         //alert('Validation error!');
         valid = false;
       }
@@ -30,6 +39,7 @@
   <p>Last Name</p>
   <br />
   <input type="text" name="lname" class="names" />
+  <p class="lname"></p>
 
   <p>Email</p>
   <br />
