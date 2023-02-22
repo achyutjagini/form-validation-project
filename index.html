@@ -1,5 +1,20 @@
 <div id="app"></div>
+<script>
+  function validate() {
+    let s = document.createElement('p');
+    let x = document.getElementsByClassName('names');
 
+    for (let i = 0; i < x.length; i++) {
+      if (x[i].value.length < 3 || x[i].value.length > 16) {
+        let s = document.createElement('p');
+        s.textContent = 'invalid input';
+        x[i].appendChild(s);
+        alert('D');
+        return false;
+      }
+    }
+  }
+</script>
 <h3><center>Validating web forms</center></h3>
 
 <form name="myForm" action="" onsubmit="return validate()">
