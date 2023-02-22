@@ -2,13 +2,15 @@
 <script>
   function validate() {
     let s = document.querySelector('.fname');
+    //selects p element
+
     let x = document.getElementsByClassName('names');
     let valid = true;
 
     for (let i = 0; i < x.length; i++) {
       if (x[i].value.length < 3 || x[i].value.length > 16) {
         s.innerHTML = 'error';
-        alert('Validation error!');
+        //alert('Validation error!');
         valid = false;
       }
     }
