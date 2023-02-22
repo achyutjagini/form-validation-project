@@ -46,8 +46,23 @@
         x[i].value.length < 3 ||
         x[i].value.length > 16 ||
         isAlphanumeric(x[i]) == false
-      )
+      ) {
+        mess = document.createElement('p');
+        val = x[i].getAttribute('name');
+        if (val == 'fname')
+          mess.textContent =
+            'first name must be alphanumeric and contain 3-16 characters';
+        else
+          mess.textContent =
+            'last name must be alphanumeric and contain 3-16 characters';
 
+        x[i].insertAdjacentElement('afterend', mess);
+        valid = false;
+        // ele=document.querySelector(`.${x[i]}`)
+        // mess = document.createElement('p');
+        //message.textContent = 'first name must be alphanumeric and contain 3-16
+      }
+    }
 
     const emailInput = document.querySelector('input[type="email"]');
     // Create a new paragraph element
@@ -58,6 +73,7 @@
       emailInput.insertAdjacentElement('afterend', message);
       valid = false;
     }
+
     return valid;
   }
 </script>
