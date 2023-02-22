@@ -1,8 +1,8 @@
 h3 {
   font-family: Lato;
-  font-style: italic;
+
   font-weight: 300;
-  background: rgba(131, 31, 31, 0.615);
+  /*background: rgba(131, 31, 31, 0.615);*/
 }
 
 .names {

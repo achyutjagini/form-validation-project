@@ -3,10 +3,16 @@
   function isAlphanumeric(str) {
     return /^[a-zA-Z0-9]+$/.test(str);
   }
+
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   function validate() {
     //let s = document.querySelector('.fname');
     //selects p element
 
+    /*
     let x = document.getElementsByClassName('names');
     let valid = true;
 
@@ -30,28 +36,30 @@
         valid = false;
       }
     }
+    */
+
+    //return valid;
+    let x = document.getElementsByClassName('names');
+    let valid = true;
+    for (let i = 0; i < x.length; i++) {
+      if (
+        x[i].value.length < 3 ||
+        x[i].value.length > 16 ||
+        isAlphanumeric(x[i]) == false
+      )
+
+
+    const emailInput = document.querySelector('input[type="email"]');
+    // Create a new paragraph element
+    if (validateEmail(emailInput.value) == false) {
+      const message = document.createElement('p');
+      message.textContent =
+        'Email must be a valid address,eg. -example@example.com';
+      emailInput.insertAdjacentElement('afterend', message);
+      valid = false;
+    }
     return valid;
   }
-  /*
-      const validateEmail = (email) => {
-        return String(email)
-          .toLowerCase()
-          .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          );
-      };
-
-      const emailInput = document.querySelector('input[type="email"]');
-      // Create a new paragraph element
-      if (validateEmail(emailInput.value) == false) {
-        const message = document.createElement('p');
-        message.textContent = 'Please enter a valid email address.';
-        emailInput.insertAdjacentElement('afterend', message);
-        valid = false;
-      }
-      // return valid;
-    }
-    */
 </script>
 
 <h3><center>Validating web forms</center></h3>
