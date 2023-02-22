@@ -14,7 +14,7 @@ function validate() {
       let s = document.createElement('p');
       s.textContent = 'invalid input';
       x[i].appendChild(s);
-      //alert('D');
+      alert('D');
       return false;
     }
   }
