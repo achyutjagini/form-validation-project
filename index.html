@@ -1,5 +1,8 @@
 <div id="app"></div>
 <script>
+  function isAlphanumeric(str) {
+    return /^[a-zA-Z0-9]+$/.test(str);
+  }
   function validate() {
     //let s = document.querySelector('.fname');
     //selects p element
@@ -8,7 +11,11 @@
     let valid = true;
 
     for (let i = 0; i < x.length; i++) {
-      if (x[i].value.length < 3 || x[i].value.length > 16) {
+      if (
+        x[i].value.length < 3 ||
+        x[i].value.length > 16 ||
+        isAlphanumeric(x[i]) == false)
+        {
         attr = x[i].getAttribute('name');
         console.log(attr);
         let s = document.querySelector(`.${attr}`);
@@ -23,6 +30,11 @@
         valid = false;
       }
     }
+
+   // const emailInput = document.querySelector('input[type="email"]');
+    // Create a new paragraph element
+    const message = document.createElement('p');
+   // message.textContent = 'Please enter a valid email address.';
 
     return valid;
   }
